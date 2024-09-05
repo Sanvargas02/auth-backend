@@ -11,7 +11,7 @@ export class User {
     name: string;
 
     @Prop( { minlength: 6, required: true } )
-    password: string;
+    password?: string; // It's optional because we don't want to return the password to the client
 
     @Prop( { default: true } )
     isActive: boolean;

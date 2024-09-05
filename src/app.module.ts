@@ -6,7 +6,7 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(), //We set it before all others imports
+    ConfigModule.forRoot(), //We set it before all others imports because we need our environment variables ready
     MongooseModule.forRoot( process.env.MONGO_URI ), //The best is defined the root in a environment variable
     AuthModule
   ],

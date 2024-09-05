@@ -13,3 +13,14 @@ This dependencies will make restricted the DTOs
 npm i class-validator class-transformer
 ```
 
+To encrypt the password we use this library
+```
+npm i bcriptjs
+```
+```
+npm i --save-dev @types/bcryptjs
+```
+JWT
+```
+npm install --save @nestjs/jwt
+```
