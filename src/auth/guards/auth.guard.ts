@@ -31,13 +31,16 @@ export class AuthGuard implements CanActivate {
         }
       );
 
-      //console.log(payload);
+      // console.log(payload);
+      // console.log(token);
+      // console.log(request);
 
       const user = await this.authService.findUserById( payload.id );
       if (!user) throw new UnauthorizedException('User does not exist');
       if (!user.isActive) throw new UnauthorizedException('User is not active');
 
       request['user'] = user; //We put the user in the request
+      //request['authorization'] = token;
 
     } catch (error) {
       throw new UnauthorizedException();
