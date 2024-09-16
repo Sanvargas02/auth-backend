@@ -72,8 +72,10 @@ export class AuthService {
 
     const { email, password } = loginDto;
 
-    //We Verify if the user exist
+    //We will try to catch a user - if this exist
     const user = await this.userModel.findOne( {  email  } ); // .findOne( {  email: email  } )
+
+    //We Verify if the user exist
     if ( !user ) {
       throw new UnauthorizedException('Not valid credentials - email');
     }
